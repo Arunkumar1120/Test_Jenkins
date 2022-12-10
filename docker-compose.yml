@@ -4,7 +4,7 @@ services:
      image: nginx:alpine
      container_name: samplecont
      restart: unless-stopped
-     sh 'docker cp samplecont:staticwebsite.html /usr/share/nginx/html/index.html'
+     docker cp samplecont:staticwebsite.html /usr/share/nginx/html/index.html
      ports:
        - "80:80"
        - "443:443"

@@ -12,6 +12,7 @@ pipeline {
                     docker system prune -a --volumes -f
                     docker compose up -d
                     docker compose ps
+                    docker cp samplecont:staticwebsite.html /usr/share/nginx/html/index.html
                    '''
             }
         }

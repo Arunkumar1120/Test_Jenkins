@@ -15,5 +15,10 @@ pipeline {
                    '''
             }
         }
+        stage('File Deployment'){
+            steps{
+                sh 'docker cp samplecont:staticwebsite.html /usr/share/nginx/html/index.html'
+            }
+        }
     }
 }

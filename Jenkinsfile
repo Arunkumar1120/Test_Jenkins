@@ -29,11 +29,5 @@ pipeline {
                 sh 'docker cp staticwebsite.html samplecont:/usr/share/nginx/html/index.html'
             }
         }
-        stage("restart nginx"){
-           steps {
-              sh 'docker exec -it samplecont sh'
-              sh 'sudo systemctl restart nginx'
-           }
-       }
     }
 }

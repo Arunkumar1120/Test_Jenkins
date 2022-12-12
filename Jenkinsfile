@@ -24,7 +24,7 @@ pipeline {
                 sh 'docker compose up -d'
             }
         }
-        stage('File Deployment'){
+        stage('File Deployment test'){
             steps{
                 sh 'docker cp staticwebsite.html samplecont:/usr/share/nginx/html/index.html'
             }

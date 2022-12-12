@@ -27,7 +27,6 @@ pipeline {
         stage('File Deployment'){
             steps{
                 sh 'docker cp staticwebsite.html samplecont:/usr/share/nginx/html/index.html'
-                sh 'echo BRANCH02'
             }
         }
     }

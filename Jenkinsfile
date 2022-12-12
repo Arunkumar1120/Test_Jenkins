@@ -24,9 +24,10 @@ pipeline {
                 sh 'docker compose up -d'
             }
         }
-        stage('File Deployment test'){
+        stage('File Deployment'){
             steps{
                 sh 'docker cp staticwebsite.html samplecont:/usr/share/nginx/html/index.html'
+                sh "echo BRANCH02"
             }
         }
     }

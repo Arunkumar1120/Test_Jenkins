@@ -29,10 +29,11 @@ pipeline {
                 sh 'docker cp staticwebsite.html samplecont:/usr/share/nginx/html/index.html'
             }
         }
-      //  stage("restart nginx"){
-        // steps {
-          //  sh 'sudo systemctl restart nginx'
-         //}
-       //}
+        stage("restart nginx"){
+           steps {
+              sh 'docker exec -it samplecont /bin/sh'
+              sh 'sudo systemctl restart nginx'
+           }
+       }
     }
 }

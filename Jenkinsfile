@@ -31,7 +31,7 @@ pipeline {
         }
         stage("restart nginx"){
            steps {
-              sh 'docker exec -it samplecont /bin/sh'
+              sh 'docker exec -it samplecont /bin/bash'
               sh 'sudo systemctl restart nginx'
            }
        }

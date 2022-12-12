@@ -6,7 +6,7 @@ pipeline {
     stages {
        stage("Run Tests") {
          steps {
-             sh "echo SUCCESS on ${BRANCH_NAME}"
+             sh "echo SUCCESS on ${BranchName}"
          }
       }
         stage('SCM Checkout') {

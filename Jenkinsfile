@@ -1,17 +1,17 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'BranchName', choices:['main','branch01','branch02'], description: 'to refresh the list, go to configure, disable "this build has parameters", launch build (without parameters)to reload the list and stop it, then launch it again (with parameters)')
+        choice(name: 'branchName', choices:['main','branch01','branch02'], description: 'to refresh the list, go to configure, disable "this build has parameters", launch build (without parameters)to reload the list and stop it, then launch it again (with parameters)')
    }
     stages {
        stage("Run Tests") {
          steps {
-             sh "echo SUCCESS on ${BranchName}"
+             sh "echo SUCCESS on ${branchName}"
          }
       }
         stage('SCM Checkout') {
             steps {
-                git branch: '${BranchName}', credentialsId: '0f902933-219b-40f5-ba89-504c8081218d', url: 'https://github.com/Arunkumar1120/Test_Jenkins.git'
+                git branch: '${branchName}', credentialsId: '0f902933-219b-40f5-ba89-504c8081218d', url: 'https://github.com/Arunkumar1120/Test_Jenkins.git'
             }
         }
         stage('Docker Container Clean'){

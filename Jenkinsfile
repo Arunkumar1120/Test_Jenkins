@@ -31,5 +31,10 @@ pipeline {
                 sh 'docker cp staticwebsite.html samplecont:/usr/share/nginx/html/index.html'
             }
         }
+       post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: subject: 'Test'
+        }
+    }
     }
 }
